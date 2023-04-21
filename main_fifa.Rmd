@@ -1,0 +1,75 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library('purrr')
+
+source("main_fifa.R")
+```
+
+
+Source dataset: https://www.kaggle.com/datasets/noahx1/fifa-23-steam-reviews?resource=download
+
+
+
+
+```{r}
+fifa <- load_fifa()
+```
+
+
+## Upvote difference evolution
+
+```{r}
+get_upvote_score_evolution()
+```
+
+## Draw evolution
+
+```{r}
+draw_hour_evolution_upvote(fifa[, 'created'],  'nb comments/hour', 'Hour of the created comments')
+```
+
+```{r}
+draw_hour_evolution_upvote(fifa[, 'author_last_played'], 'Number of last played', 'Time the player last played')
+```
+
+## Comparison between true/false bool
+
+### Comparison upvoted/non upvoted Comments
+
+```{r}
+compare_comments_for_comments_under_10(fifa, 'voted_up', 'was voted', '(normalized) not voted', 'Comparison number comments voted/not voted (lower than 10 upvotes)')
+```
+
+
+
+```{r}
+compare_upvote_distribution_on_bool(fifa, 'voted_up', 'was voted', 'not voted', 'Comparison upvote distribution\non voted/not voted (bigger than 10 upvotes)')
+```
+
+### Comparison steam purchased/non steam purchased Comments
+
+```{r}
+compare_comments_for_comments_under_10(fifa, 'steam_purchase', 'purchased on steam', '(normalized) not purchased on steam', 'Comparison number comments \non purchased/not purchased on steam (lower than 10 upvotes)')
+```
+
+```{r}
+compare_upvote_distribution_on_bool(fifa, 'steam_purchase', 'purchased on steam', 'not purchased on steam', 'Comparison upvote distribution \non purchased/not purchased on steam (bigger than 10 upvotes)')
+```
+
+### Comparison steam free/purchased Comments
+
+```{r}
+compare_comments_for_comments_under_10(fifa, 'recieved_for_free', 'free gift', '(normalized) purchased', 'Comparison number comments \non gifted/purchased on steam (lower than 10 upvotes)')
+```
+
+
+```{r}
+compare_upvote_distribution_on_bool(fifa, 'recieved_for_free', 'free gift', 'purchased','Comparison upvote distribution \non gifted/purchased on steam (bigger than 10 upvotes)')
+```
+
+
+
