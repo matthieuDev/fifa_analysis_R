@@ -23,7 +23,7 @@ get_upvote_score_evolution <- function() {
 }
 
 draw_hour_evolution_upvote <- function(vec_time, ylab, title_) {
-  #+1 because tabulate only count after 0
+  #+1 is because tabulate only start at 1
   by_minute <- (tabulate(as.numeric(vec_time) %% (3600 * 24) / 3600 + 1))
   #add to have the 24:00 and see the loop
   by_minute <- c(by_minute, by_minute[1])
