@@ -22,6 +22,18 @@ fifa
 fifa %>%
   summary(G)
 ```
+
+```{r}
+#ratio bool
+fifa %>%
+  summarise(
+    ratio_voted_up=mean(voted_up),
+    ratio_steam_purchase=mean(steam_purchase),
+    ratio_recieved_for_free=mean(recieved_for_free),
+    ratio_written_during_early_access=mean(written_during_early_access)
+  )
+```
+
 ```{r}
 compare_up_and_down()
 ```
