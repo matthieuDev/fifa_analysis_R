@@ -19,6 +19,15 @@ fifa <- load_fifa()
 fifa
 ```
 ```{r}
+fifa %>%
+  summary(G)
+```
+```{r}
+get_info_vote_by_month()
+```
+
+
+```{r}
 #a present is a game received for free, a bad present is a presentz that got downvote
 how_many_bad_present()
 ```
