@@ -23,6 +23,11 @@ fifa %>%
   summary(G)
 ```
 ```{r}
+compare_up_and_down()
+```
+
+
+```{r}
 get_info_vote_by_month()
 ```
 
