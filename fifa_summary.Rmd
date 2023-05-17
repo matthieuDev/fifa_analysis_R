@@ -1,0 +1,51 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+source("load_data.R")
+source("fifa_summary.R")
+
+library(dplyr)
+```
+
+```{r}
+fifa <- load_fifa()
+```
+
+
+```{r}
+fifa
+```
+```{r}
+#a present is a game received for free, a bad present is a presentz that got downvote
+how_many_bad_present()
+```
+
+## Compare the mean value for a column between the upvotes and downvotes
+
+```{r}
+compare_mean_by_vote_status('author_playtime_last_two_weeks')
+```
+
+
+```{r}
+compare_mean_by_vote_status('author_playtime_forever')
+```
+
+```{r}
+compare_mean_by_vote_status('author_playtime_at_review')
+```
+```{r}
+compare_mean_by_vote_status('author_num_games_owned')
+
+```
+
+```{r}
+compare_mean_by_vote_status('author_num_reviews')
+
+```
+
+
+

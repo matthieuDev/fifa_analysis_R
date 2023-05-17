@@ -4,9 +4,8 @@ output: html_notebook
 ---
 
 ```{r}
-library('purrr')
-
-source("main_fifa.R")
+source("load_data.R")
+source("fifa_graph.R")
 ```
 
 
